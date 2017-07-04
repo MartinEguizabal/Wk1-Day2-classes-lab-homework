@@ -45,7 +45,7 @@ class LibraryTest < MiniTest::Test
                     date: 01/02/2017
                   }
                 }, 
-            result)
+                result)
   end
 
   def test_rental_details
@@ -55,7 +55,7 @@ class LibraryTest < MiniTest::Test
                  student_name: "Jeff", 
                  date: "01/12/16"
                   }, 
-            result)
+                result)
   end
 
   def test_add_book
@@ -69,10 +69,11 @@ class LibraryTest < MiniTest::Test
         }
       )
     assert_equal(@book_set, @book_set1.all_books)
-
   end
 
-
-
+  def test_update_rental_details
+    result = @book_set1.update_rental_details("adventures for boys", "Sam", 04/06/2017)
+    assert_equal(@book_set, @book_set1.all_books)
+  end
 
 end

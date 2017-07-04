@@ -30,4 +30,13 @@ class Library
     @books << new_book
   end
 
+  def update_rental_details(title, member, due_date)
+    for a_book in @books
+      if a_book[:title] == title
+        a_book[:rental_details][:student_name] = member
+        a_book[:rental_details][:date] = due_date
+      end
+    end
+  end
+
 end
